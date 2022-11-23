@@ -970,7 +970,7 @@ var modals = function modals() {
         });
         modal.style.display = 'block';
         document.body.classList.add('modal-open');
-        document.body.style.marginRight = "".concat(scroll);
+        document.body.style.marginRight = "".concat(scroll, "px");
       });
     });
     close.addEventListener('click', function () {
@@ -987,7 +987,7 @@ var modals = function modals() {
         });
         modal.style.display = 'none';
         document.body.classList.remove('modal-open');
-        document.body.style.marginRight = "".concat(0);
+        document.body.style.marginRight = "".concat(0, "px");
       }
     });
   }
@@ -1004,6 +1004,8 @@ var modals = function modals() {
       if (!display) {
         document.querySelector(selector).style.display = 'block';
         document.body.style.overflow = 'hidden';
+        var scroll = calcScroll();
+        document.body.style.marginRight = "".concat(scroll, "px");
       }
     }, time);
   }

@@ -23,7 +23,7 @@ const modals = () => {
 
 				modal.style.display = 'block';
 				document.body.classList.add('modal-open');
-				document.body.style.marginRight = `${scroll}`;
+				document.body.style.marginRight = `${scroll}px`;
 			});
 		});
 
@@ -44,7 +44,7 @@ const modals = () => {
 
 				modal.style.display = 'none';
 				document.body.classList.remove('modal-open');
-				document.body.style.marginRight = `${0}`;
+				document.body.style.marginRight = `${0}px`;
 			}
 		});
 	}
@@ -62,6 +62,8 @@ const modals = () => {
 			if (!display) {
 				document.querySelector(selector).style.display = 'block';
 				document.body.style.overflow = 'hidden';
+				const scroll = calcScroll();
+				document.body.style.marginRight = `${scroll}px`;
 			}
 		}, time);
 	}
