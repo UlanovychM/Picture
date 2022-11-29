@@ -1,4 +1,4 @@
-import { getResource } from './services/requests';
+import { getResource } from '../services/requests';
 
 const showMoreStyle = (trigger, wrapper) => {
 	const btn = document.querySelector(trigger);
